@@ -45,7 +45,7 @@ if __name__ == "__main__":
         if current_node == end_node:
             print("Found: {}".format(current_node.value))
             break
-
+        # rule is to access adjencent vertices first
         for i, edge in enumerate(current_node.edges):
             current_edge = graph.get_node(edge)
             if not current_edge.visited:
