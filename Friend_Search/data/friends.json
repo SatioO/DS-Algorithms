@@ -13,10 +13,10 @@
     },
     {
         "id": "ronak-shah",
-        "edges": ["rohit-natekar", "swapnil-jadhav", "yatin-mahant"]
+        "edges": ["rohit-natekar", "swapnil-jadhav", "smit-patil"]
     },
     {
-        "id": "yatin-mahant",
+        "id": "smit-patil",
         "edges": ["ronak-shah"]
     }
 ]
