@@ -1,7 +1,7 @@
 import argparse
 import json
-from structures import Node, Graph
 from collections import deque
+from structures import Node, Graph
 
 g = Graph()
 
@@ -24,6 +24,7 @@ def BFS(args):
     result = {}
     queue.append(g.graph[args.start])
     degree = 0
+    matched = False
 
     while (len(queue) > 0):
         node = queue[0]
@@ -33,11 +34,13 @@ def BFS(args):
             
             if node.parent not in result and node.parent is not None:
                 result[node.parent] = degree
+                
                 degree+=1
 
             if node.value == args.end:
                 result[node.value] = degree
-                # print(f'Found: {node}')
+                matched = True
+                print(f'Found: {node}')
                 break
 
             for n in node.edges:
@@ -47,16 +50,20 @@ def BFS(args):
                 queue.append(g.graph[n])
 
         queue.popleft()
-    
-    return degree
+
+    if matched:
+        return degree, result
+    else:
+        return 0, {}
 
 
 def main(args):
     data = read_file(args.data)
     prepare_data(data)
 
-    degree = BFS(args)
-    print(f'{args.end} is a {degree}rd degree connection to {args.start}')
+    degree, connections = BFS(args)
+    print(f'{args.end} is a {degree} degree connection to {args.start}')
+    print(connections)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
