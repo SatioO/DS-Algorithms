@@ -47,22 +47,21 @@ def BFS(args):
                 queue.append(g.graph[n])
 
         queue.popleft()
-
-    print(f'{args.end} is a {degree}rd degree connection to {args.start}')
+    
+    return degree
 
 
 def main(args):
-    path = args.data + 'friends.json'
-    data = read_file(path)
+    data = read_file(args.data)
     prepare_data(data)
 
-    BFS(args)
-
+    degree = BFS(args)
+    print(f'{args.end} is a {degree}rd degree connection to {args.start}')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", type=str, default="data/")
-    parser.add_argument("--start", type=str, default=1)
-    parser.add_argument("--end", type=str, default=10)
+    parser.add_argument("--data", type=str, default="data/friends.json")
+    parser.add_argument("--start", type=str, default="vaibhav-satam")
+    parser.add_argument("--end", type=str, default="ronak-shah")
     args = parser.parse_args()
     main(args)
