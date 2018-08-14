@@ -1,0 +1,22 @@
+[
+    {
+        "id": "vaibhav-satam",
+        "edges": ["rohit-natekar", "swapnil-jadhav"]
+    },
+    {
+        "id": "rohit-natekar",
+        "edges": ["ronak-shah", "vaibhav-satam"]
+    },
+    {
+        "id": "swapnil-jadhav",
+        "edges": ["vaibhav-satam", "ronak-shah"]
+    },
+    {
+        "id": "ronak-shah",
+        "edges": ["rohit-natekar", "swapnil-jadhav", "yatin-mahant"]
+    },
+    {
+        "id": "yatin-mahant",
+        "edges": ["ronak-shah"]
+    }
+]
