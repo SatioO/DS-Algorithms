@@ -1,0 +1,27 @@
+[
+    {
+        "jobId": "B",
+        "deadline": 1,
+        "profit": 19
+    },
+    {
+        "jobId": "A",
+        "deadline": 2,
+        "profit": 100
+    },
+    {
+        "jobId": "C",
+        "deadline": 1,
+        "profit": 27
+    },
+    {
+        "jobId": "D",
+        "deadline": 1,
+        "profit": 25
+    },
+    {
+        "jobId": "E",
+        "deadline": 3,
+        "profit": 15
+    }
+]
